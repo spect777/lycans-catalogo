@@ -1,13 +1,30 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LYCANS | Catálogo V6</title><style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LYCANS | Catálogo V7</title><style>
 :root{font-family:Arial,Helvetica,sans-serif;color:#f7f7f8;background:#0d0e12}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer}header{background:#111218;border-bottom:1px solid #303038;position:sticky;top:0;z-index:3}.wrap{max-width:1200px;margin:auto;padding:0 22px}.top{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:12px}.brand{font-weight:900;letter-spacing:2px;font-size:26px}.brand b{color:#ed3546}.tag{color:#a4a5ad;font-size:12px;letter-spacing:1px}main{padding-top:28px}.hero{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:24px}h1{margin:0 0 8px;font-size:30px}.sub{color:#aaaeb9;margin:0}.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}.tools input,.tools select,.field{border:1px solid #393b46;border-radius:9px;padding:12px;background:#1a1b22;color:white;min-width:0}.tools input{flex:2;min-width:200px}.tools select{flex:1;min-width:150px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:20px}.card{border:1px solid #34343d;border-radius:15px;overflow:hidden;background:#191a20}.photo{aspect-ratio:1/1;background:#252630;display:flex;align-items:center;justify-content:center;overflow:hidden}.photo img{width:100%;height:100%;object-fit:contain}.missing{color:#a7a9b3;text-align:center;padding:25px}.body{padding:16px}.over{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:11px;color:#c7c8cf}.artist{color:#ff4657;font-weight:800;letter-spacing:.5px}.name{font-size:20px;margin:12px 0 8px}.desc{font-size:12px;color:#b6b6bf;margin-bottom:14px}.switch{display:flex;gap:8px}.switch button{flex:1;background:transparent;border:1px solid #823640;color:white;padding:10px;border-radius:8px}.switch button.active,.red{background:#b92332!important;color:white!important;border:0!important}.wa{width:100%;margin-top:12px;border:0;border-radius:8px;padding:13px;background:#20b65a;color:white;font-weight:800}.adminBtn,.secondary{background:#23242c;border:1px solid #444651;color:white;border-radius:9px;padding:11px 14px}.foot{padding:28px 0;color:#898c99;font-size:12px}.panel{margin-top:32px;border:1px solid #3c3d46;border-radius:14px;padding:20px;background:#17181e;display:none}.panel.open{display:block}.panel h2{margin-top:0}.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.formgrid label{display:flex;flex-direction:column;gap:7px;font-size:12px;color:#c5c5cd}.formgrid input,.formgrid select{width:100%}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.notice{font-size:12px;color:#a8aab4;line-height:1.6}.empty{padding:35px;color:#aab;text-align:center;border:1px dashed #444;border-radius:12px}.pill{display:inline-block;background:#321d22;color:#ff7582;padding:5px 9px;border-radius:20px;font-size:11px;margin-bottom:12px}.productrows{font-size:12px;color:#c4c6cd;line-height:1.8;max-height:180px;overflow:auto}.small{font-size:12px;color:#c2c3cb}.hide{display:none}@media(max-width:600px){.top{min-height:65px}.brand{font-size:22px}.tag{display:none}h1{font-size:25px}.wrap{padding:0 14px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.body{padding:10px}.name{font-size:15px}.desc{font-size:11px}.switch button{font-size:11px;padding:9px 3px}.wa{font-size:11px;padding:11px 5px}.over{font-size:10px;flex-wrap:wrap}.tools input{min-width:100%}.card{border-radius:11px}}
 
 /* V4: catálogo de solo lectura */
-.api-state{margin:0 0 18px;padding:12px 15px;border:1px solid #393b46;border-radius:9px;background:#191a20;color:#d0d2db;font-size:13px;line-height:1.5}.api-state.error{border-color:#a34550;color:#ffd5da}.api-state.ok{border-color:#365644;color:#c2e8d0}.api-state[hidden]{display:none}.retry{margin-left:10px;background:#333640;border:1px solid #666;color:white;border-radius:6px;padding:6px 10px}.wa{display:flex;align-items:center;justify-content:center;gap:8px}.wa svg{width:19px;height:19px;flex:none}.switch button:disabled{opacity:.35;cursor:not-allowed}.foot a{color:#ff7582}</style></head><body>
+.api-state{margin:0 0 18px;padding:12px 15px;border:1px solid #393b46;border-radius:9px;background:#191a20;color:#d0d2db;font-size:13px;line-height:1.5}.api-state.error{border-color:#a34550;color:#ffd5da}.api-state.ok{border-color:#365644;color:#c2e8d0}.api-state[hidden]{display:none}.retry{margin-left:10px;background:#333640;border:1px solid #666;color:white;border-radius:6px;padding:6px 10px}.wa{display:flex;align-items:center;justify-content:center;gap:8px}.wa svg{width:19px;height:19px;flex:none}.switch button:disabled{opacity:.35;cursor:not-allowed}.foot a{color:#ff7582}
+/* V7: visor ampliado */
+.photo:has(img){cursor:zoom-in}.photo img{transition:opacity .15s}
+.zoom-modal[hidden]{display:none!important}.zoom-modal{position:fixed;inset:0;z-index:1000;background:rgba(5,6,10,.96);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;color:white}
+.zoom-bar{width:min(100%,1100px);display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 0;flex-wrap:wrap}
+.zoom-title{font-weight:700;font-size:14px;max-width:60%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.zoom-actions{display:flex;gap:7px;align-items:center}.zoom-actions button,.zoom-sides button{border:1px solid #666;border-radius:8px;background:#252630;color:#fff;padding:9px 13px;cursor:pointer}.zoom-actions button:hover,.zoom-sides button.active{background:#b92332;border-color:#b92332}.zoom-actions button:disabled,.zoom-sides button:disabled{opacity:.35;cursor:not-allowed}
+.zoom-stage{position:relative;flex:1;min-height:0;width:min(100%,1100px);overflow:hidden;display:flex;align-items:center;justify-content:center;touch-action:none;cursor:zoom-in;border-radius:9px;background:#15161b;user-select:none}
+.zoom-stage.is-zoomed{cursor:grab}.zoom-stage.is-dragging{cursor:grabbing}.zoom-stage img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transform-origin:center;pointer-events:none;user-select:none;will-change:transform}
+.zoom-sides{display:flex;gap:8px;padding:10px}.zoom-help{font-size:11px;color:#a9aab2;text-align:center;padding-bottom:5px}
+@media(max-width:600px){.zoom-modal{padding:8px}.zoom-title{max-width:100%;width:100%;font-size:12px}.zoom-bar{gap:5px}.zoom-actions button{padding:8px 10px}.zoom-help{font-size:10px}}
+</style></head><body>
 <header><div class="wrap top"><div class="brand">LYCANS<b>.</b></div><div class="tag">ROCK · METAL · ANIME</div></div></header>
 <main class="wrap"><section class="hero"><div><div class="pill">CATÁLOGO DE DISEÑOS</div><h1>Encuentra tu próximo polo</h1><p class="sub">Elige tu diseño y consulta por WhatsApp.</p></div><span class="small" id="count"></span></section>
 <div class="api-state" id="apiState" role="status">Cargando diseños desde Google Sheets…</div>
 <section class="tools"><input id="search" placeholder="Buscar artista, diseño o código…"><select id="category"><option value="">Todas las categorías</option></select><select id="artist"><option value="">Todos los artistas</option></select></section>
-<section class="grid" id="grid"></section><footer class="foot">LYCANS · Catálogo V6 · Pedidos y disponibilidad por WhatsApp</footer></main><script>const API_URL = 'https://script.google.com/macros/s/AKfycbzuuZg7tnEhPJGZ5A8jcnoCLjePO08cV_5znDozcdgRAi0lSFciukBEeG4-DglrqH9b/exec';
+<section class="grid" id="grid"></section><footer class="foot">LYCANS · Catálogo V7 · Pedidos y disponibilidad por WhatsApp</footer></main><div class="zoom-modal" id="zoomModal" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+  <div class="zoom-bar"><span class="zoom-title" id="zoomTitle"></span><div class="zoom-actions"><button type="button" id="zoomOut" aria-label="Alejar">−</button><button type="button" id="zoomReset" aria-label="Restablecer zoom">100%</button><button type="button" id="zoomIn" aria-label="Acercar">+</button><button type="button" id="zoomClose" aria-label="Cerrar visor">✕</button></div></div>
+  <div class="zoom-stage" id="zoomStage"><img id="zoomImage" alt="Imagen ampliada" draggable="false"></div>
+  <div class="zoom-sides"><button type="button" id="zoomFront">Frente</button><button type="button" id="zoomBack">Espalda</button></div>
+  <div class="zoom-help">Rueda del mouse o botones +/− para acercar · Arrastra para mover · Pellizca con dos dedos en el celular · Esc para cerrar</div>
+</div>
+<script>const API_URL = 'https://script.google.com/macros/s/AKfycbzuuZg7tnEhPJGZ5A8jcnoCLjePO08cV_5znDozcdgRAi0lSFciukBEeG4-DglrqH9b/exec';
 const $ = id => document.getElementById(id);
 const clean = value => String(value ?? '').trim();
 const esc = value => clean(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -178,4 +195,101 @@ $('grid').addEventListener('click', e => {
   }
 });
 ['search','category','artist'].forEach(id => $(id).addEventListener(id === 'search' ? 'input' : 'change',render));
+
+// V7: visor de productos; no altera la API ni los datos de Google Sheets.
+let zoomCode = null, zoomSide = 'front', zoomScale = 1, zoomX = 0, zoomY = 0;
+const zoomPointers = new Map();
+let zoomGesture = null;
+const zoomModal = $('zoomModal'), zoomStage = $('zoomStage'), zoomImage = $('zoomImage');
+function zoomApply() {
+  zoomImage.style.transform = `translate(${zoomX}px, ${zoomY}px) scale(${zoomScale})`;
+  zoomStage.classList.toggle('is-zoomed', zoomScale > 1);
+  $('zoomReset').textContent = Math.round(zoomScale * 100) + '%';
+}
+function zoomResetView() {zoomScale = 1;zoomX = 0;zoomY = 0;zoomApply();}
+function zoomLimitPan() {
+  if (zoomScale <= 1) {zoomX = 0;zoomY = 0;return;}
+  const stage = zoomStage.getBoundingClientRect();
+  const w = zoomImage.getBoundingClientRect().width / zoomScale;
+  const h = zoomImage.getBoundingClientRect().height / zoomScale;
+  const maxX = Math.max(0,(w * zoomScale - stage.width)/2);
+  const maxY = Math.max(0,(h * zoomScale - stage.height)/2);
+  zoomX = Math.max(-maxX,Math.min(maxX,zoomX));
+  zoomY = Math.max(-maxY,Math.min(maxY,zoomY));
+}
+function zoomSetScale(next) {
+  zoomScale = Math.max(1,Math.min(5,next));
+  zoomLimitPan();zoomApply();
+}
+function zoomShowSide(side) {
+  const p = products.find(x => x.code === zoomCode);
+  if (!p || (side === 'back' && !p.back)) return;
+  zoomSide = side;
+  zoomImage.src = side === 'back' ? p.back : p.front;
+  zoomImage.alt = `${p.artist} ${p.name} ${side === 'back' ? 'espalda' : 'frente'}`;
+  $('zoomFront').classList.toggle('active',side === 'front');
+  $('zoomBack').classList.toggle('active',side === 'back');
+  $('zoomBack').disabled = !p.back;
+  zoomResetView();
+}
+function zoomOpen(code,side) {
+  const p = products.find(x => x.code === code);
+  if (!p) return;
+  zoomCode = code;
+  $('zoomTitle').textContent = `${p.artist} · ${p.name} · ${p.code}`;
+  zoomModal.hidden = false;
+  document.body.style.overflow = 'hidden';
+  zoomShowSide(side);
+  $('zoomClose').focus();
+}
+function zoomClose() {
+  zoomModal.hidden = true;
+  document.body.style.overflow = '';
+  zoomPointers.clear();zoomGesture = null;zoomCode = null;
+}
+$('grid').addEventListener('click',e => {
+  const photo = e.target.closest('.photo');
+  if (!photo || !photo.querySelector('img')) return;
+  const code = photo.id.slice('photo-'.length);
+  const selected = document.querySelector(`[data-code="${CSS.escape(code)}"][data-side].active`);
+  zoomOpen(code,selected?.dataset.side || 'front');
+});
+$('zoomClose').onclick = zoomClose;
+$('zoomIn').onclick = () => zoomSetScale(zoomScale + .5);
+$('zoomOut').onclick = () => zoomSetScale(zoomScale - .5);
+$('zoomReset').onclick = zoomResetView;
+$('zoomFront').onclick = () => zoomShowSide('front');
+$('zoomBack').onclick = () => zoomShowSide('back');
+zoomModal.addEventListener('click',e => {if (e.target === zoomModal) zoomClose();});
+document.addEventListener('keydown',e => {if (!zoomModal.hidden && e.key === 'Escape') zoomClose();});
+zoomStage.addEventListener('wheel',e => {e.preventDefault();zoomSetScale(zoomScale + (e.deltaY < 0 ? .25 : -.25));},{passive:false});
+function zoomDistance(a,b) {return Math.hypot(a.x-b.x,a.y-b.y);}
+zoomStage.addEventListener('pointerdown',e => {
+  e.preventDefault();zoomStage.setPointerCapture(e.pointerId);
+  zoomPointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+  if (zoomPointers.size === 2) {
+    const pts=[...zoomPointers.values()];
+    zoomGesture={distance:zoomDistance(pts[0],pts[1]),scale:zoomScale};
+  }
+  zoomStage.classList.add('is-dragging');
+});
+zoomStage.addEventListener('pointermove',e => {
+  if (!zoomPointers.has(e.pointerId)) return;
+  const old=zoomPointers.get(e.pointerId);
+  zoomPointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+  if (zoomPointers.size === 2 && zoomGesture) {
+    const pts=[...zoomPointers.values()];
+    zoomSetScale(zoomGesture.scale * zoomDistance(pts[0],pts[1]) / Math.max(1,zoomGesture.distance));
+  } else if (zoomPointers.size === 1 && zoomScale > 1) {
+    zoomX += e.clientX - old.x;zoomY += e.clientY - old.y;
+    zoomLimitPan();zoomApply();
+  }
+});
+function zoomPointerEnd(e) {
+  zoomPointers.delete(e.pointerId);zoomGesture=null;
+  if (zoomPointers.size < 1) zoomStage.classList.remove('is-dragging');
+}
+zoomStage.addEventListener('pointerup',zoomPointerEnd);
+zoomStage.addEventListener('pointercancel',zoomPointerEnd);
+zoomImage.addEventListener('error',() => {zoomImage.alt='No se pudo cargar esta imagen';});
 </script></body></html>
