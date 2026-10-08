@@ -1,0 +1,181 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LYCANS | Catálogo V6</title><style>
+:root{font-family:Arial,Helvetica,sans-serif;color:#f7f7f8;background:#0d0e12}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer}header{background:#111218;border-bottom:1px solid #303038;position:sticky;top:0;z-index:3}.wrap{max-width:1200px;margin:auto;padding:0 22px}.top{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:12px}.brand{font-weight:900;letter-spacing:2px;font-size:26px}.brand b{color:#ed3546}.tag{color:#a4a5ad;font-size:12px;letter-spacing:1px}main{padding-top:28px}.hero{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:24px}h1{margin:0 0 8px;font-size:30px}.sub{color:#aaaeb9;margin:0}.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}.tools input,.tools select,.field{border:1px solid #393b46;border-radius:9px;padding:12px;background:#1a1b22;color:white;min-width:0}.tools input{flex:2;min-width:200px}.tools select{flex:1;min-width:150px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:20px}.card{border:1px solid #34343d;border-radius:15px;overflow:hidden;background:#191a20}.photo{aspect-ratio:1/1;background:#252630;display:flex;align-items:center;justify-content:center;overflow:hidden}.photo img{width:100%;height:100%;object-fit:contain}.missing{color:#a7a9b3;text-align:center;padding:25px}.body{padding:16px}.over{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:11px;color:#c7c8cf}.artist{color:#ff4657;font-weight:800;letter-spacing:.5px}.name{font-size:20px;margin:12px 0 8px}.desc{font-size:12px;color:#b6b6bf;margin-bottom:14px}.switch{display:flex;gap:8px}.switch button{flex:1;background:transparent;border:1px solid #823640;color:white;padding:10px;border-radius:8px}.switch button.active,.red{background:#b92332!important;color:white!important;border:0!important}.wa{width:100%;margin-top:12px;border:0;border-radius:8px;padding:13px;background:#20b65a;color:white;font-weight:800}.adminBtn,.secondary{background:#23242c;border:1px solid #444651;color:white;border-radius:9px;padding:11px 14px}.foot{padding:28px 0;color:#898c99;font-size:12px}.panel{margin-top:32px;border:1px solid #3c3d46;border-radius:14px;padding:20px;background:#17181e;display:none}.panel.open{display:block}.panel h2{margin-top:0}.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.formgrid label{display:flex;flex-direction:column;gap:7px;font-size:12px;color:#c5c5cd}.formgrid input,.formgrid select{width:100%}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.notice{font-size:12px;color:#a8aab4;line-height:1.6}.empty{padding:35px;color:#aab;text-align:center;border:1px dashed #444;border-radius:12px}.pill{display:inline-block;background:#321d22;color:#ff7582;padding:5px 9px;border-radius:20px;font-size:11px;margin-bottom:12px}.productrows{font-size:12px;color:#c4c6cd;line-height:1.8;max-height:180px;overflow:auto}.small{font-size:12px;color:#c2c3cb}.hide{display:none}@media(max-width:600px){.top{min-height:65px}.brand{font-size:22px}.tag{display:none}h1{font-size:25px}.wrap{padding:0 14px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.body{padding:10px}.name{font-size:15px}.desc{font-size:11px}.switch button{font-size:11px;padding:9px 3px}.wa{font-size:11px;padding:11px 5px}.over{font-size:10px;flex-wrap:wrap}.tools input{min-width:100%}.card{border-radius:11px}}
+
+/* V4: catálogo de solo lectura */
+.api-state{margin:0 0 18px;padding:12px 15px;border:1px solid #393b46;border-radius:9px;background:#191a20;color:#d0d2db;font-size:13px;line-height:1.5}.api-state.error{border-color:#a34550;color:#ffd5da}.api-state.ok{border-color:#365644;color:#c2e8d0}.api-state[hidden]{display:none}.retry{margin-left:10px;background:#333640;border:1px solid #666;color:white;border-radius:6px;padding:6px 10px}.wa{display:flex;align-items:center;justify-content:center;gap:8px}.wa svg{width:19px;height:19px;flex:none}.switch button:disabled{opacity:.35;cursor:not-allowed}.foot a{color:#ff7582}</style></head><body>
+<header><div class="wrap top"><div class="brand">LYCANS<b>.</b></div><div class="tag">ROCK · METAL · ANIME</div></div></header>
+<main class="wrap"><section class="hero"><div><div class="pill">CATÁLOGO DE DISEÑOS</div><h1>Encuentra tu próximo polo</h1><p class="sub">Elige tu diseño y consulta por WhatsApp.</p></div><span class="small" id="count"></span></section>
+<div class="api-state" id="apiState" role="status">Cargando diseños desde Google Sheets…</div>
+<section class="tools"><input id="search" placeholder="Buscar artista, diseño o código…"><select id="category"><option value="">Todas las categorías</option></select><select id="artist"><option value="">Todos los artistas</option></select></section>
+<section class="grid" id="grid"></section><footer class="foot">LYCANS · Catálogo V6 · Pedidos y disponibilidad por WhatsApp</footer></main><script>const API_URL = 'https://script.google.com/macros/s/AKfycbzuuZg7tnEhPJGZ5A8jcnoCLjePO08cV_5znDozcdgRAi0lSFciukBEeG4-DglrqH9b/exec';
+const $ = id => document.getElementById(id);
+const clean = value => String(value ?? '').trim();
+const esc = value => clean(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const WA_ICON = `<svg viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M16 .9A15 15 0 0 0 3.1 23.5L1 31l7.7-2A15.1 15.1 0 1 0 16 .9zm0 27.4c-2.4 0-4.7-.7-6.7-2l-.5-.3-4.5 1.2 1.2-4.4-.3-.5a12.3 12.3 0 1 1 10.8 6zm6.8-9.2c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.2.4-.9 1.2-1.1 1.4-.2.2-.4.3-.8.1a10.2 10.2 0 0 1-3-1.8 11.3 11.3 0 0 1-2.1-2.6c-.2-.4 0-.6.2-.8l.6-.7.4-.6c.1-.2 0-.5 0-.7l-1.2-2.9c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.7.1-1 .5-.4.4-1.3 1.3-1.3 3.2s1.4 3.7 1.6 4c.2.2 2.7 4.1 6.6 5.7.9.4 1.6.6 2.1.7.9.3 1.7.2 2.3.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5z"/></svg>`;
+let products = [];
+function setState(message, kind = '') {
+  const node = $('apiState');
+  node.hidden = !message;
+  node.className = 'api-state' + (kind ? ' ' + kind : '');
+  node.innerHTML = message ? esc(message) + (kind === 'error' ? ' <button class="retry" id="retry">Reintentar</button>' : '') : '';
+  if (kind === 'error') $('retry').onclick = loadProducts;
+}
+function options(id, items, placeholder) {
+  const node = $(id), selected = node.value;
+  node.innerHTML = '<option value="">' + placeholder + '</option>' +
+    [...new Set(items.filter(Boolean))].sort((a,b) => a.localeCompare(b,'es'))
+      .map(x => '<option value="' + esc(x) + '">' + esc(x) + '</option>').join('');
+  node.value = [...node.options].some(o => o.value === selected) ? selected : '';
+}
+function render() {
+  options('category', products.map(p => p.category), 'Todas las categorías');
+  options('artist', products.map(p => p.artist), 'Todos los artistas');
+  const q = $('search').value.toLowerCase(), c = $('category').value, a = $('artist').value;
+  const visible = products.filter(p => (!c || p.category === c) && (!a || p.artist === a) &&
+    [p.code,p.artist,p.name,p.category].join(' ').toLowerCase().includes(q));
+  $('count').textContent = visible.length + ' modelo(s)';
+  $('grid').innerHTML = visible.length ? visible.map(p => {
+    const code = esc(p.code);
+    return '<article class="card"><div class="photo" id="photo-' + code + '"></div>' +
+      '<div class="body"><div class="over"><span class="artist">' + esc(p.artist).toUpperCase() + '</span><span>REF: ' + code + '</span></div>' +
+      '<h2 class="name">' + esc(p.name) + '</h2><div class="desc">' + esc(p.description || (p.category + ' · Algodón peruano · Jersey 20/1')) + '</div>' +
+      '<div class="switch"><button class="active" data-code="' + code + '" data-side="front">Frente</button>' +
+      '<button data-code="' + code + '" data-side="back" ' + (!p.back ? 'disabled title="Sin foto de espalda"' : '') + '>Espalda</button></div>' +
+      '<button class="wa" data-wa="' + code + '">' + WA_ICON + 'Consultar por WhatsApp</button></div></article>';
+  }).join('') : '<div class="empty">No encontramos modelos con esos filtros.</div>';
+  visible.forEach(p => showImage(p.code,'front'));
+}
+function showImage(code, side) {
+  const p = products.find(x => x.code === code), node = $('photo-' + code);
+  if (!p || !node) return;
+  const src = side === 'back' ? p.back : p.front;
+  node.replaceChildren();
+  if (!src) {
+    const missing = document.createElement('div'); missing.className='missing';
+    missing.textContent = side === 'back' ? 'Espalda aún no incorporada' : 'Imagen no disponible';
+    node.append(missing);
+  } else {
+    const image = document.createElement('img');
+    image.alt = p.artist + ' ' + p.code + ' ' + (side === 'back' ? 'espalda' : 'frente');
+    image.src = src;
+    image.onerror = () => {node.replaceChildren(); const d=document.createElement('div');d.className='missing';d.textContent='No se pudo cargar la imagen. Revisa el archivo en la carpeta imagenes.';node.append(d)};
+    node.append(image);
+  }
+  document.querySelectorAll('[data-code]').forEach(button => {
+    if (button.dataset.code === code) button.classList.toggle('active', button.dataset.side === side);
+  });
+}
+
+// V6: visualización inmediata, copia local y sincronización sin bloquear la interfaz.
+const CACHE_KEY = 'lycans_catalogo_publico_v6';
+const FALLBACK_PRODUCTS = [{"code":"RKIM01","category":"Rock y Metal","artist":"Iron Maiden","name":"The Number of the Beast","front":"imagenes/RKIM01.png","back":"imagenes/RKIM01Espalda.png","description":"Algodón peruano · Jersey 20/1"},{"code":"RKIM02","category":"Rock y Metal","artist":"Iron Maiden","name":"Iron Maiden Tour","front":"imagenes/RKIM02.png","back":"","description":"Algodón peruano · Jersey 20/1"}];
+const RETRY_DELAYS = [2000, 5000, 12000, 25000, 45000];
+let requestNumber = 0;
+let retryTimer = null;
+let attempt = 0;
+let lastSource = '';
+
+function normalizeProducts(rows) {
+  return rows.map(p => ({
+    code: clean(p.codigo ?? p.code), category: clean(p.categoria ?? p.category),
+    artist: clean(p.artista ?? p.artist), name: clean(p.nombre ?? p.name),
+    front: clean(p.frente ?? p.front), back: clean(p.espalda ?? p.back),
+    description: clean(p.descripcion ?? p.description)
+  })).filter(p => p.code && p.name && p.artist && p.front);
+}
+function saveCache(rows) {
+  try { localStorage.setItem(CACHE_KEY, JSON.stringify({savedAt:Date.now(), products:rows})); }
+  catch (_) { /* navegación privada o almacenamiento bloqueado */ }
+}
+function loadInitialProducts() {
+  try {
+    const cache = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+    if (cache && Array.isArray(cache.products)) {
+      products = normalizeProducts(cache.products);
+      lastSource = 'cache';
+      render();
+      setState('Mostrando la última versión guardada. Buscando actualizaciones…');
+      return;
+    }
+  } catch (_) {}
+  products = normalizeProducts(FALLBACK_PRODUCTS);
+  lastSource = 'fallback';
+  render();
+  setState('Mostrando el catálogo de respaldo. Buscando actualizaciones…');
+}
+function scheduleRetry() {
+  const delay = RETRY_DELAYS[Math.min(attempt, RETRY_DELAYS.length - 1)];
+  attempt++;
+  clearTimeout(retryTimer);
+  retryTimer = setTimeout(loadProducts, delay);
+}
+function loadProducts() {
+  clearTimeout(retryTimer);
+  const current = ++requestNumber;
+  // Nunca borrar los productos visibles mientras se sincroniza.
+  if (attempt === 0 && products.length) {
+    setState('Catálogo disponible. Verificando actualizaciones…');
+  }
+  const callback = 'lycansCallback_' + current;
+  const script = document.createElement('script');
+  let finished = false;
+  const timer = setTimeout(() => fail(), 12000);
+  function cleanup() {
+    clearTimeout(timer);
+    script.remove();
+    // Conservar un callback inocuo ante respuestas tardías.
+    window[callback] = () => {};
+  }
+  function fail() {
+    if (finished) return;
+    finished = true;
+    cleanup();
+    if (current !== requestNumber) return;
+    setState('Mostrando la última versión disponible. No se pudo actualizar; reintentaremos automáticamente.', 'error');
+    scheduleRetry();
+  }
+  window[callback] = data => {
+    if (finished) return;
+    finished = true;
+    cleanup();
+    if (current !== requestNumber) return;
+    if (!data || data.ok !== true || !Array.isArray(data.productos)) {
+      failAfterInvalid();
+      return;
+    }
+    const updated = normalizeProducts(data.productos);
+    // Un catálogo vacío es válido: puede que todos los productos estén ocultos.
+    const changed = JSON.stringify(products) !== JSON.stringify(updated);
+    products = updated;
+    saveCache(products);
+    lastSource = 'live';
+    attempt = 0;
+    if (changed) render();
+    setState('Catálogo actualizado desde Google Sheets.', 'ok');
+  };
+  function failAfterInvalid() {
+    if (current !== requestNumber) return;
+    setState('Mostrando la última versión disponible. Google devolvió datos inválidos; reintentaremos.', 'error');
+    scheduleRetry();
+  }
+  script.onerror = fail;
+  script.src = API_URL + '?callback=' + encodeURIComponent(callback) + '&t=' + Date.now();
+  document.head.appendChild(script);
+}
+loadInitialProducts();
+loadProducts();
+
+$('grid').addEventListener('click', e => {
+  const side = e.target.closest('[data-side]');
+  if (side && !side.disabled) showImage(side.dataset.code, side.dataset.side);
+  const wa = e.target.closest('[data-wa]');
+  if (wa) {
+    const p = products.find(x => x.code === wa.dataset.wa);
+    if (p) {
+      const msg = 'Hola, LYCANS. Me interesa el polo ' + p.artist + ', código ' + p.code + '. ¿Qué tallas tienen disponibles?';
+      window.open('https://wa.me/51994057438?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    }
+  }
+});
+['search','category','artist'].forEach(id => $(id).addEventListener(id === 'search' ? 'input' : 'change',render));
+</script></body></html>
