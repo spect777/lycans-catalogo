@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LYCANS | Catálogo V11</title><style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LYCANS | Catálogo V11.1</title><style>
 :root{font-family:Arial,Helvetica,sans-serif;color:#f7f7f8;background:#0d0e12}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer}header{background:#111218;border-bottom:1px solid #303038;position:sticky;top:0;z-index:3}.wrap{max-width:1200px;margin:auto;padding:0 22px}.top{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:12px}.brand{font-weight:900;letter-spacing:2px;font-size:26px}.brand b{color:#ed3546}.tag{color:#a4a5ad;font-size:12px;letter-spacing:1px}main{padding-top:28px}.hero{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:24px}h1{margin:0 0 8px;font-size:30px}.sub{color:#aaaeb9;margin:0}.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}.tools input,.tools select,.field{border:1px solid #393b46;border-radius:9px;padding:12px;background:#1a1b22;color:white;min-width:0}.tools input{flex:2;min-width:200px}.tools select{flex:1;min-width:150px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:20px}.card{border:1px solid #34343d;border-radius:15px;overflow:hidden;background:#191a20}.photo{aspect-ratio:1/1;background:#252630;display:flex;align-items:center;justify-content:center;overflow:hidden}.photo img{width:100%;height:100%;object-fit:contain}.missing{color:#a7a9b3;text-align:center;padding:25px}.body{padding:16px}.over{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:11px;color:#c7c8cf}.artist{color:#ff4657;font-weight:800;letter-spacing:.5px}.name{font-size:20px;margin:12px 0 8px}.desc{font-size:12px;color:#b6b6bf;margin-bottom:14px}.switch{display:flex;gap:8px}.switch button{flex:1;background:transparent;border:1px solid #823640;color:white;padding:10px;border-radius:8px}.switch button.active,.red{background:#b92332!important;color:white!important;border:0!important}.wa{width:100%;margin-top:12px;border:0;border-radius:8px;padding:13px;background:#20b65a;color:white;font-weight:800}.adminBtn,.secondary{background:#23242c;border:1px solid #444651;color:white;border-radius:9px;padding:11px 14px}.foot{padding:28px 0;color:#898c99;font-size:12px}.panel{margin-top:32px;border:1px solid #3c3d46;border-radius:14px;padding:20px;background:#17181e;display:none}.panel.open{display:block}.panel h2{margin-top:0}.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.formgrid label{display:flex;flex-direction:column;gap:7px;font-size:12px;color:#c5c5cd}.formgrid input,.formgrid select{width:100%}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.notice{font-size:12px;color:#a8aab4;line-height:1.6}.empty{padding:35px;color:#aab;text-align:center;border:1px dashed #444;border-radius:12px}.pill{display:inline-block;background:#321d22;color:#ff7582;padding:5px 9px;border-radius:20px;font-size:11px;margin-bottom:12px}.productrows{font-size:12px;color:#c4c6cd;line-height:1.8;max-height:180px;overflow:auto}.small{font-size:12px;color:#c2c3cb}.hide{display:none}@media(max-width:600px){.top{min-height:65px}.brand{font-size:22px}.tag{display:none}h1{font-size:25px}.wrap{padding:0 14px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.body{padding:10px}.name{font-size:15px}.desc{font-size:11px}.switch button{font-size:11px;padding:9px 3px}.wa{font-size:11px;padding:11px 5px}.over{font-size:10px;flex-wrap:wrap}.tools input{min-width:100%}.card{border-radius:11px}}
 
 /* V4: catálogo de solo lectura */
@@ -33,7 +33,7 @@
 <main class="wrap"><section class="hero"><div><div class="pill">CATÁLOGO DE DISEÑOS</div><h1>Encuentra tu próximo polo</h1><p class="sub">Elige tu diseño y consulta por WhatsApp.</p></div><span class="small" id="count"></span></section>
 <div class="api-state" id="apiState" role="status">Cargando diseños desde Google Sheets…</div>
 <section class="tools"><input id="search" placeholder="Buscar artista, diseño o código…"><select id="category"><option value="">Todas las categorías</option></select><select id="artist"><option value="">Todos los artistas</option></select></section>
-<section class="catalog-sections" id="grid"><div class="catalog-loading">Cargando catálogo LYCANS…</div></section><footer class="foot">LYCANS · Catálogo V11 · Pedidos y disponibilidad por WhatsApp</footer></main><div class="zoom-modal" id="zoomModal" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+<section class="catalog-sections" id="grid"><div class="catalog-loading">Cargando catálogo LYCANS…</div></section><footer class="foot">LYCANS · Catálogo V11.1 · Pedidos y disponibilidad por WhatsApp</footer></main><div class="zoom-modal" id="zoomModal" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
   <div class="zoom-bar"><span class="zoom-title" id="zoomTitle"></span><div class="zoom-actions"><button type="button" id="zoomOut" aria-label="Alejar">−</button><button type="button" id="zoomReset" aria-label="Restablecer zoom">100%</button><button type="button" id="zoomIn" aria-label="Acercar">+</button><button type="button" id="zoomClose" aria-label="Cerrar visor">✕</button></div></div>
   <div class="zoom-viewer"><button type="button" class="zoom-nav zoom-prev" id="zoomPrev" aria-label="Diseño anterior">❮</button><div class="zoom-stage" id="zoomStage"><img id="zoomImage" alt="Imagen ampliada" draggable="false"></div><button type="button" class="zoom-nav zoom-next" id="zoomNext" aria-label="Diseño siguiente">❯</button></div>
   <div class="zoom-sides"><button type="button" id="zoomFront">Frente</button><button type="button" id="zoomBack">Espalda</button></div>
@@ -133,8 +133,12 @@ function openCategory(category){
 }
 function returnHome(){
   if(categoryView === null)return;
-  if(history.state?.[CATEGORY_HISTORY])history.back();
-  else closeCategoryView();
+  // Actualizar la vista inmediatamente: no depender de un popstate asincrono.
+  // Conservar otras claves de historial y retirar solo la categoria activa.
+  const state={...(history.state||{})};
+  delete state[CATEGORY_HISTORY];
+  history.replaceState(state,'',location.href);
+  closeCategoryView();
 }
 function closeCategoryView(){
   if(categoryView===null)return;
@@ -436,7 +440,9 @@ $('grid').addEventListener('click',e => {
   zoomOpen(code,selected?.dataset.side || 'front');
 });
 window.addEventListener('popstate', () => {
-  if (!zoomModal.hidden) zoomClose(true);
+  if (!zoomModal.hidden) { zoomClose(true); return; }
+  // El boton Atrás del navegador también debe cerrar la categoria.
+  if (categoryView !== null && !history.state?.[CATEGORY_HISTORY]) closeCategoryView();
 });
 $('zoomClose').onclick = () => zoomClose();
 $('zoomPrev').onclick = () => zoomNavigate(-1);
