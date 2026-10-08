@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LYCANS | Catálogo V10.1</title><style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LYCANS | Catálogo V11</title><style>
 :root{font-family:Arial,Helvetica,sans-serif;color:#f7f7f8;background:#0d0e12}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button{cursor:pointer}header{background:#111218;border-bottom:1px solid #303038;position:sticky;top:0;z-index:3}.wrap{max-width:1200px;margin:auto;padding:0 22px}.top{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:12px}.brand{font-weight:900;letter-spacing:2px;font-size:26px}.brand b{color:#ed3546}.tag{color:#a4a5ad;font-size:12px;letter-spacing:1px}main{padding-top:28px}.hero{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:24px}h1{margin:0 0 8px;font-size:30px}.sub{color:#aaaeb9;margin:0}.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}.tools input,.tools select,.field{border:1px solid #393b46;border-radius:9px;padding:12px;background:#1a1b22;color:white;min-width:0}.tools input{flex:2;min-width:200px}.tools select{flex:1;min-width:150px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:20px}.card{border:1px solid #34343d;border-radius:15px;overflow:hidden;background:#191a20}.photo{aspect-ratio:1/1;background:#252630;display:flex;align-items:center;justify-content:center;overflow:hidden}.photo img{width:100%;height:100%;object-fit:contain}.missing{color:#a7a9b3;text-align:center;padding:25px}.body{padding:16px}.over{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:11px;color:#c7c8cf}.artist{color:#ff4657;font-weight:800;letter-spacing:.5px}.name{font-size:20px;margin:12px 0 8px}.desc{font-size:12px;color:#b6b6bf;margin-bottom:14px}.switch{display:flex;gap:8px}.switch button{flex:1;background:transparent;border:1px solid #823640;color:white;padding:10px;border-radius:8px}.switch button.active,.red{background:#b92332!important;color:white!important;border:0!important}.wa{width:100%;margin-top:12px;border:0;border-radius:8px;padding:13px;background:#20b65a;color:white;font-weight:800}.adminBtn,.secondary{background:#23242c;border:1px solid #444651;color:white;border-radius:9px;padding:11px 14px}.foot{padding:28px 0;color:#898c99;font-size:12px}.panel{margin-top:32px;border:1px solid #3c3d46;border-radius:14px;padding:20px;background:#17181e;display:none}.panel.open{display:block}.panel h2{margin-top:0}.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.formgrid label{display:flex;flex-direction:column;gap:7px;font-size:12px;color:#c5c5cd}.formgrid input,.formgrid select{width:100%}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}.notice{font-size:12px;color:#a8aab4;line-height:1.6}.empty{padding:35px;color:#aab;text-align:center;border:1px dashed #444;border-radius:12px}.pill{display:inline-block;background:#321d22;color:#ff7582;padding:5px 9px;border-radius:20px;font-size:11px;margin-bottom:12px}.productrows{font-size:12px;color:#c4c6cd;line-height:1.8;max-height:180px;overflow:auto}.small{font-size:12px;color:#c2c3cb}.hide{display:none}@media(max-width:600px){.top{min-height:65px}.brand{font-size:22px}.tag{display:none}h1{font-size:25px}.wrap{padding:0 14px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.body{padding:10px}.name{font-size:15px}.desc{font-size:11px}.switch button{font-size:11px;padding:9px 3px}.wa{font-size:11px;padding:11px 5px}.over{font-size:10px;flex-wrap:wrap}.tools input{min-width:100%}.card{border-radius:11px}}
 
 /* V4: catálogo de solo lectura */
@@ -25,12 +25,15 @@
 /* V10: pasarelas por categoria, novedades y navegacion accesible */
 .catalog-sections{display:flex;flex-direction:column;gap:30px}.catalog-section{min-width:0}.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 13px}.section-head h2{margin:0;font-size:23px}.section-meta{color:#a8aab4;font-size:12px}.rail-controls{display:flex;gap:7px}.rail-arrow{border:1px solid #555761;background:#23242c;color:#fff;border-radius:8px;padding:8px 13px;font-size:19px}.rail-arrow:disabled{opacity:.3;cursor:default}.product-rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;overscroll-behavior-x:contain;padding:2px 2px 14px;scrollbar-width:none;-ms-overflow-style:none}.product-rail::-webkit-scrollbar{display:none}.product-rail .card{flex:0 0 clamp(220px,25%,270px);scroll-snap-align:start;min-width:0}.rail-all{border:1px solid #5d4148;background:#2a2026;color:#fff;border-radius:8px;padding:9px 12px;font-size:12px;font-weight:700}.rail-all:hover,.rail-all[aria-expanded="true"]{background:#b92332;border-color:#b92332}.product-rail.all-open{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));overflow:visible;scroll-snap-type:none;padding-bottom:2px}.product-rail.all-open .card{width:auto;min-width:0}.section-sub{color:#a8aab4;font-size:12px;margin:0 0 12px}.section-divider{border:0;border-top:1px solid #30313a;margin:4px 0 0}.catalog-loading{padding:30px 15px;text-align:center;color:#b9bbc6;border:1px dashed #454651;border-radius:12px}.photo:has(img){cursor:pointer}
 @media(max-width:600px){.catalog-sections{gap:24px}.section-head h2{font-size:19px}.product-rail{gap:10px}.product-rail .card{flex-basis:min(70vw,250px)}.rail-arrow{padding:6px 10px}.section-meta{font-size:11px}.product-rail.all-open{grid-template-columns:repeat(2,minmax(0,1fr))}.rail-controls{flex-wrap:wrap;justify-content:flex-end}.rail-all{padding:7px 9px}}
+/* V11: vista dedicada por categoría, paginación y rendimiento */
+.category-view-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:18px}.category-view-head h2{margin:0;font-size:25px}.back-home{border:1px solid #5d4148;background:#23242c;color:white;border-radius:9px;padding:10px 15px;font-weight:700}.pager{display:flex;align-items:center;justify-content:center;gap:12px;margin:24px 0 8px}.pager button{background:#252630;color:#fff;border:1px solid #555761;border-radius:8px;padding:10px 15px}.pager button:disabled{opacity:.35;cursor:default}.category-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}.category-grid .card{min-width:0}.catalog-section{content-visibility:auto;contain-intrinsic-size:auto 600px}.catalog-section:focus-within{content-visibility:visible}.photo{contain:layout paint}
+@media(max-width:600px){.category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.category-view-head h2{font-size:21px}}
 </style></head><body>
 <header><div class="wrap top"><div class="brand">LYCANS<b>.</b></div><div class="tag">ROCK · METAL · ANIME</div></div></header>
 <main class="wrap"><section class="hero"><div><div class="pill">CATÁLOGO DE DISEÑOS</div><h1>Encuentra tu próximo polo</h1><p class="sub">Elige tu diseño y consulta por WhatsApp.</p></div><span class="small" id="count"></span></section>
 <div class="api-state" id="apiState" role="status">Cargando diseños desde Google Sheets…</div>
 <section class="tools"><input id="search" placeholder="Buscar artista, diseño o código…"><select id="category"><option value="">Todas las categorías</option></select><select id="artist"><option value="">Todos los artistas</option></select></section>
-<section class="catalog-sections" id="grid"><div class="catalog-loading">Cargando catálogo LYCANS…</div></section><footer class="foot">LYCANS · Catálogo V10.1 · Pedidos y disponibilidad por WhatsApp</footer></main><div class="zoom-modal" id="zoomModal" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+<section class="catalog-sections" id="grid"><div class="catalog-loading">Cargando catálogo LYCANS…</div></section><footer class="foot">LYCANS · Catálogo V11 · Pedidos y disponibilidad por WhatsApp</footer></main><div class="zoom-modal" id="zoomModal" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
   <div class="zoom-bar"><span class="zoom-title" id="zoomTitle"></span><div class="zoom-actions"><button type="button" id="zoomOut" aria-label="Alejar">−</button><button type="button" id="zoomReset" aria-label="Restablecer zoom">100%</button><button type="button" id="zoomIn" aria-label="Acercar">+</button><button type="button" id="zoomClose" aria-label="Cerrar visor">✕</button></div></div>
   <div class="zoom-viewer"><button type="button" class="zoom-nav zoom-prev" id="zoomPrev" aria-label="Diseño anterior">❮</button><div class="zoom-stage" id="zoomStage"><img id="zoomImage" alt="Imagen ampliada" draggable="false"></div><button type="button" class="zoom-nav zoom-next" id="zoomNext" aria-label="Diseño siguiente">❯</button></div>
   <div class="zoom-sides"><button type="button" id="zoomFront">Frente</button><button type="button" id="zoomBack">Espalda</button></div>
@@ -57,6 +60,11 @@ function options(id, items, placeholder) {
   node.value = [...node.options].some(o => o.value === selected) ? selected : '';
 }
 // Una sola ficha por producto: las secciones son vistas, no registros duplicados.
+const PAGE_SIZE = 12;
+let categoryView = null;
+let categoryPage = 1;
+let homeScrollY = 0;
+const CATEGORY_HISTORY = 'lycansCategoryV11';
 const collator = new Intl.Collator('es',{sensitivity:'base',numeric:true});
 function sortedNames(names) { return [...new Set(names.filter(Boolean))].sort(collator.compare); }
 function productCard(p) {
@@ -68,10 +76,10 @@ function productCard(p) {
     '<button data-code="' + code + '" data-side="back" ' + (!p.back ? 'disabled title="Sin foto de espalda"' : '') + '>Espalda</button></div>' +
     '<button class="wa" data-wa="' + code + '">' + WA_ICON + 'Consultar por WhatsApp</button></div></article>';
 }
-function rail(title,items,key,subtitle='') {
+function rail(title,items,key,subtitle='',categoryName=title) {
   const id='rail-'+key;
   return '<section class="catalog-section"><div class="section-head"><div><h2>'+esc(title)+'</h2><span class="section-meta">'+items.length+' modelo(s)</span></div>'+
-    '<div class="rail-controls"><button type="button" class="rail-all" data-all="'+id+'" aria-expanded="false">Ver todos</button><button type="button" class="rail-arrow" data-rail="'+id+'" data-dir="-1" aria-label="Desplazar a la izquierda">❮</button>'+
+    '<div class="rail-controls"><button type="button" class="rail-all" data-category="'+esc(categoryName)+'">Explorar categoría</button><button type="button" class="rail-arrow" data-rail="'+id+'" data-dir="-1" aria-label="Desplazar a la izquierda">❮</button>'+
     '<button type="button" class="rail-arrow" data-rail="'+id+'" data-dir="1" aria-label="Desplazar a la derecha">❯</button></div></div>'+
     (subtitle?'<p class="section-sub">'+esc(subtitle)+'</p>':'')+
     '<div class="product-rail" id="'+id+'" aria-label="'+esc(title)+'">'+items.map(productCard).join('')+'</div></section>';
@@ -79,6 +87,7 @@ function rail(title,items,key,subtitle='') {
 function render() {
   options('category',products.map(p=>p.category),'Todas las categorías');
   options('artist',products.map(p=>p.artist),'Todos los artistas');
+  if(categoryView !== null){renderCategoryView();return;}
   const q=$('search').value.trim().toLocaleLowerCase('es'), c=$('category').value, a=$('artist').value;
   const visible=products.filter(p=>(!c||p.category===c)&&(!a||p.artist===a)&&
     [p.code,p.artist,p.name,p.category].join(' ').toLocaleLowerCase('es').includes(q));
@@ -106,12 +115,47 @@ function render() {
     if(!filtered && group.length>=12 && artists.length>=2){
       sections.pop();
       sections.push('<div class="section-head"><h2>'+esc(category)+'</h2><span class="section-meta">'+group.length+' modelos</span></div>');
-      for(const artist of artists){const subset=group.filter(p=>p.artist===artist);sections.push(rail(artist,subset,'artist-'+n++));}
+      for(const artist of artists){const subset=group.filter(p=>p.artist===artist);sections.push(rail(artist,subset,'artist-'+n++,'',category));}
     }
   }
   $('grid').innerHTML=sections.join('');
-  visible.forEach(p=>showImage(p.code,'front'));
+  visible.forEach((p,i)=>showImage(p.code,'front',i<4));
   updateRailButtons();
+}
+function openCategory(category){
+  if(!category || categoryView !== null)return;
+  homeScrollY=window.scrollY;
+  categoryView=category;
+  categoryPage=1;
+  history.pushState({[CATEGORY_HISTORY]:category},'',location.href);
+  renderCategoryView();
+  window.scrollTo({top:0,behavior:'instant'});
+}
+function returnHome(){
+  if(categoryView === null)return;
+  if(history.state?.[CATEGORY_HISTORY])history.back();
+  else closeCategoryView();
+}
+function closeCategoryView(){
+  if(categoryView===null)return;
+  categoryView=null;
+  categoryPage=1;
+  render();
+  requestAnimationFrame(()=>window.scrollTo({top:homeScrollY,behavior:'instant'}));
+}
+function renderCategoryView(){
+  const group=products.filter(p=>(p.category||'Sin categoría')===categoryView);
+  const q=$('search').value.trim().toLocaleLowerCase('es');
+  const artist=$('artist').value;
+  const visible=group.filter(p=>(!artist||p.artist===artist)&&[p.code,p.artist,p.name,p.category].join(' ').toLocaleLowerCase('es').includes(q));
+  const pages=Math.max(1,Math.ceil(visible.length/PAGE_SIZE));
+  categoryPage=Math.max(1,Math.min(categoryPage,pages));
+  const slice=visible.slice((categoryPage-1)*PAGE_SIZE,categoryPage*PAGE_SIZE);
+  $('count').textContent=visible.length+' modelo(s)';
+  $('grid').innerHTML='<div class="category-view-head"><div><button type="button" class="back-home" data-back-home>← Volver al catálogo</button><h2 style="margin-top:16px">'+esc(categoryView)+'</h2><span class="section-meta">'+visible.length+' modelo(s) · Página '+categoryPage+' de '+pages+'</span></div></div>'+
+    (slice.length?'<div class="category-grid">'+slice.map(productCard).join('')+'</div>':'<div class="empty">No hay modelos con esos filtros.</div>')+
+    (pages>1?'<nav class="pager" aria-label="Páginas de productos"><button data-page="'+(categoryPage-1)+'" '+(categoryPage===1?'disabled':'')+'>← Anterior</button><span>'+categoryPage+' / '+pages+'</span><button data-page="'+(categoryPage+1)+'" '+(categoryPage===pages?'disabled':'')+'>Siguiente →</button></nav>':'');
+  slice.forEach((p,i)=>showImage(p.code,'front',i<4));
 }
 function updateRailButtons(){
   document.querySelectorAll('.product-rail').forEach(rail=>{
@@ -123,15 +167,12 @@ function updateRailButtons(){
   });
 }
 $('grid').addEventListener('click',e=>{
-  const all=e.target.closest('[data-all]');
-  if(all){
-    const target=$(all.dataset.all);if(!target)return;
-    const expanded=target.classList.toggle('all-open');
-    all.textContent=expanded?'Ver menos':'Ver todos';
-    all.setAttribute('aria-expanded',String(expanded));
-    if(!expanded)target.scrollLeft=0;
-    updateRailButtons();return;
-  }
+  const categoryButton=e.target.closest('[data-category]');
+  if(categoryButton){openCategory(categoryButton.dataset.category);return;}
+  const backButton=e.target.closest('[data-back-home]');
+  if(backButton){returnHome();return;}
+  const pageButton=e.target.closest('[data-page]');
+  if(pageButton){categoryPage=Number(pageButton.dataset.page);renderCategoryView();window.scrollTo({top:0,behavior:'instant'});return;}
   const arrow=e.target.closest('[data-rail]');if(!arrow)return;
   const target=$(arrow.dataset.rail);if(!target)return;
   const card=target.querySelector('.card');
@@ -165,7 +206,7 @@ function loadCatalogImage(image, source) {
   };
   image.src = candidates[0] || '';
 }
-function showImage(code, side) {
+function showImage(code, side, priority = false) {
   const p = products.find(x => x.code === code), node = $('photo-' + code);
   if (!p || !node) return;
   const src = side === 'back' ? p.back : p.front;
@@ -177,7 +218,8 @@ function showImage(code, side) {
   } else {
     const image = document.createElement('img');
     image.alt = p.artist + ' ' + p.code + ' ' + (side === 'back' ? 'espalda' : 'frente');
-    image.loading = 'lazy';
+    image.loading = priority ? 'eager' : 'lazy';
+     if(priority) image.fetchPriority = 'high';
     image.decoding = 'async';
     node.append(image);
     loadCatalogImage(image, src);
@@ -297,7 +339,7 @@ $('grid').addEventListener('click', e => {
     }
   }
 });
-['search','category','artist'].forEach(id => $(id).addEventListener(id === 'search' ? 'input' : 'change',render));
+['search','category','artist'].forEach(id => $(id).addEventListener(id === 'search' ? 'input' : 'change',()=>{if(id==='category' && categoryView!==null){closeCategoryView();}else{if(categoryView!==null)categoryPage=1;render();}}));
 
 // V7: visor de productos; no altera la API ni los datos de Google Sheets.
 let zoomCode = null, zoomSide = 'front', zoomScale = 1, zoomX = 0, zoomY = 0;
